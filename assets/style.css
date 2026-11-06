@@ -279,6 +279,66 @@ details[open] .plus { transform: rotate(45deg); }
   [data-container-panel] { transform: none !important; }
 }
 
+/* Editorial refinement: each reading experience belongs to its professional. */
+.skin-journal h2, .technology-lab h2, .topic-reader h2, .decision-room h2, .conscious-guide h2 { text-wrap: balance; max-width: 20ch; }
+.skin-journal h3, .technology-lab h3, .topic-reader h3, .decision-room h3, .conscious-guide h3 { font-family: var(--head); font-weight: 500; font-size: clamp(1.6rem,2.7vw,2.7rem); line-height: 1.12; margin-bottom: 1rem; }
+.skin-journal p, .technology-lab p, .topic-reader p, .decision-room p, .conscious-guide p { max-width: 54ch; }
+.skin-journal { display: grid; grid-template-columns: 1.25fr 1fr; gap: 3rem 7%; border-top: 1px solid var(--line); }
+.journal-title { align-self: start; position: sticky; top: 2rem; }
+.journal-title p { margin-top: 2rem; max-width: 34ch; }
+.journal-notes { padding-top: 5rem; display: grid; gap: 3rem; }
+.journal-notes article { border-top: 1px solid var(--line); padding-top: 1.5rem; }
+.skin-journal > a { grid-column: 2; justify-self: start; }
+.technology-lab { background: #24221e; color: #f7f3eb; --accent: #e9ddc9; --muted: #e9ddc9; --line: #756e60; }
+.lab-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 4rem; }
+.lab-grid article { padding: 2rem 0; border-top: 1px solid var(--line); }
+.lab-grid article:nth-child(2) { margin-top: 4rem; }
+.lab-principle { grid-column: 1/-1; display: flex; align-items: center; justify-content: space-between; gap: 2rem; border-top: 1px solid var(--line); padding-top: 2rem; }
+.lab-principle p { font-size: 1.3rem; }
+.reader-nav { display: flex; flex-wrap: wrap; gap: .75rem; margin-block: 2rem 3rem; }
+.reader-nav a { padding: .8rem 1.2rem; border: 1px solid var(--accent); min-height: 44px; }
+.reader-nav a:hover { background: var(--soft); }
+.reader-spread { display: grid; grid-template-columns: 1fr 1fr; }
+.reader-spread article { padding: clamp(1.5rem,4vw,4rem); background: var(--soft); }
+.reader-spread article:nth-child(2) { background: #485331; color: #fff9e9; --accent: #fff9e9; }
+.reader-spread article:target { outline: 3px solid var(--ink); outline-offset: 5px; }
+.reader-spread a { margin-top: 1.5rem; }
+.decision-room { background: #e3e2db; }
+.decision-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 7%; }
+.decision-grid > div > p { margin-block: 2rem; max-width: 34ch; }
+.decision-list { list-style: none; padding: 0; counter-reset: decision; }
+.decision-list li { counter-increment: decision; position: relative; padding: 2rem 0 2rem 3.5rem; border-top: 1px solid var(--line); }
+.decision-list li::before { content: counter(decision, decimal-leading-zero); position: absolute; left: 0; top: 2rem; font-variant-numeric: tabular-nums; color: var(--muted); }
+.conscious-heading { display: grid; grid-template-columns: 1.3fr 1fr; align-items: end; gap: 3rem; }
+.routine-notes { margin-block: 4rem 2rem; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 3rem; }
+.routine-notes article { border-top: 1px solid var(--line); padding-top: 1.5rem; }
+.routine-notes article:nth-child(2) { margin-top: 3rem; }
+.routine-notes article:nth-child(3) { margin-top: 6rem; }
+.mobile-booking { display: none; }
+@media (prefers-reduced-motion: no-preference) {
+ .skin-journal article[data-in-view] { animation: page-turn .6s ease-out; }
+ .technology-lab article[data-in-view] { animation: aperture .45s ease-out; }
+ .reader-spread article[data-in-view] { animation: margin-slide .55s ease-out; }
+ .decision-list li[data-in-view] { animation: contour-align .65s ease-out; }
+ .routine-notes article[data-in-view] { animation: print-register .5s ease-out; }
+}
+@media (max-width: 720px) {
+ .skin-journal, .decision-grid, .conscious-heading { grid-template-columns: 1fr; gap: 2rem; }
+ .journal-title { position: static; }
+ .journal-notes { padding-top: 0; gap: 2rem; }
+ .skin-journal > a { grid-column: 1; }
+ .lab-grid, .reader-spread, .routine-notes { grid-template-columns: 1fr; gap: 1.5rem; }
+ .lab-grid { margin-top: 2rem; }
+ .lab-grid article:nth-child(2), .routine-notes article:nth-child(2), .routine-notes article:nth-child(3) { margin-top: 0; }
+ .lab-principle { display: block; }
+ .lab-principle a { margin-top: 1rem; }
+ .routine-notes { margin-top: 2.5rem; }
+ .mobile-booking { display: block; position: fixed; z-index: 20; bottom: 0; inset-inline: 0; background: var(--paper); border-top: 1px solid var(--line); padding: .65rem var(--gutter) max(.65rem,env(safe-area-inset-bottom)); }
+ .mobile-booking .button { display: flex; justify-content: space-between; width: 100%; min-height: 48px; }
+ body:not(.catalog) { padding-bottom: 90px; }
+ :where(a,button,summary) { scroll-margin-bottom: 100px; }
+}
+
 /* Finish pass: a distinct display face per site, common functional affordances. */
 @font-face {
   font-family: Clinic Display;
