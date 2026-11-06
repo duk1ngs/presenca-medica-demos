@@ -14,3 +14,23 @@
 
   for (const chapter of chapters) observer.observe(chapter);
 })();
+
+// The external player only loads after an explicit action. Closing it stops playback.
+const reel = document.querySelector('[data-reel]');
+if (reel) {
+  reel.hidden = false;
+  reel.addEventListener('toggle', () => {
+    const current = reel.querySelector('iframe');
+    if (!reel.open) {
+      current?.remove();
+      return;
+    }
+    if (current) return;
+    const frame = document.createElement('iframe');
+    frame.src = reel.dataset.reel;
+    frame.title = `Instagram: ${reel.dataset.title}`;
+    frame.allowFullscreen = true;
+    frame.referrerPolicy = 'no-referrer';
+    reel.append(frame);
+  });
+}
