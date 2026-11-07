@@ -1,6 +1,6 @@
-// Animate only the chosen chapter. Unenhanced HTML remains visible and interactive.
+// Reveal headings and editorial details as they enter the viewport.
 (() => {
-  const chapters = document.querySelectorAll('[data-reveal]');
+  const chapters = document.querySelectorAll('[data-reveal], main .section h2');
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
   if (!chapters.length || !('IntersectionObserver' in window) || reduced.matches) return;
 
@@ -10,7 +10,7 @@
       if (!reduced.matches) entry.target.dataset.inView = 'true';
       observer.unobserve(entry.target);
     }
-  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.15 });
+  }, { rootMargin: '0px 0px -12% 0px', threshold: 0.08 });
 
   for (const chapter of chapters) observer.observe(chapter);
 })();
