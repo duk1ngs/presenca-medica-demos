@@ -524,121 +524,138 @@ body.vellum .hero h1 em { font-style: normal; font-weight: 440; }
   .reader-spread article:nth-child(2) { margin-top: 0; }
 }
 
-/* Video-inspired compositions. Photograph, type and depth share one stage. */
-.scene { position: relative; isolation: isolate; overflow: clip; }
-.scene .hero-copy { padding: 0; min-width: 0; }
-.scene-heading { position: relative; z-index: 2; min-width: 0; }
-.scene h1 { font-family: var(--head); font-size: clamp(3.5rem,6.7vw,6rem); line-height: .98; letter-spacing: -.04em; max-width: 13ch; font-weight: 500; text-wrap: balance; }
-.scene h1 em { display: block; font-style: normal; color: var(--accent); }
-.scene .lead { max-width: 36ch; font-size: 1rem; }
-.scene .hero-actions { margin-top: 1.5rem; }
-.scene-art { position: relative; min-width: 0; z-index: 1; }
-.scene .hero-figure { padding: 0; margin: 0; border: 0; background: transparent; width: 100%; }
-.scene .image-stage { border: 0; border-radius: 0; overflow: hidden; }
-.scene .hero-art { width: 100%; height: 100%; object-fit: cover; }
-.scene-signature, .scene-next, .scene-navigation a { display: inline-flex; align-items: center; gap: 1rem; min-height: 44px; font-size: .85rem; }
-.scene-signature { font-weight: 650; }
-.scene-next { width: fit-content; }
-.scene-navigation { display: flex; gap: 2rem; flex-wrap: wrap; }
-.scene-navigation a { border-bottom: 1px solid var(--line); }
-.scene-word { position: absolute; font: 500 clamp(7rem,19vw,19rem)/1 var(--head); color: var(--soft); pointer-events: none; z-index: -1; letter-spacing: -.04em; }
-.scene-caption { z-index: 2; }
-.scene-caption .scene-signature { margin-bottom: 2rem; }
+/* Art direction for the five existing medical pages. */
+.scene { position:relative; isolation:isolate; overflow:clip; }
+.scene h1 { font-family:var(--head); font-size:clamp(3.4rem,6.4vw,6rem); line-height:1.02; letter-spacing:-.035em; font-weight:500; margin:0; text-wrap:balance; }
+.scene h1 em { color:var(--accent); font-style:normal; }
+.scene .scene-heading { position:relative; z-index:2; min-width:0; }
+.scene .hero-copy { padding:0; min-width:0; }
+.scene .lead { max-width:37ch; font-size:1rem; line-height:1.65; }
+.scene .hero-actions { margin-top:1.5rem; }
+.scene-art { position:relative; min-width:0; z-index:1; }
+.scene .hero-figure { margin:0; padding:0; width:100%; border:0; background:none; }
+.scene .image-stage { border:0; border-radius:0; overflow:hidden; aspect-ratio:auto; }
+.scene .hero-art { display:block; width:100%; height:auto; object-fit:cover; animation-duration:1s; }
+.scene-signature, .scene-next { display:inline-flex; align-items:center; gap:1rem; min-height:44px; font-size:.85rem; }
+.scene-signature { font-weight:650; }
+.scene-next { width:fit-content; }
+.scene-navigation a, .scene-routine a { display:flex; align-items:center; gap:1rem; min-height:48px; }
+.scene a:not(.button):hover { color:var(--accent); }
+.scene a:focus-visible { outline:2px solid currentColor; outline-offset:6px; }
 
-/* Alana — an oversized journal title crosses the edge of a portrait. */
-.scene-vellum { display: grid; grid-template-columns: 1.1fr 1fr; grid-template-rows: auto auto; gap: 3rem 7%; padding-block: 4.5rem 5rem; align-items: center; }
-.scene-vellum .scene-heading { grid-column: 1; grid-row: 1; margin-right: -18%; }
-.scene-vellum .scene-art { grid-column: 2; grid-row: 1/3; }
-.scene-vellum .image-stage { aspect-ratio: .85; border-radius: 42% 42% 0 0; }
-.scene-vellum .hero-portrait { object-position: 50% 25%; }
-.scene-vellum .scene-caption { grid-column: 1; grid-row: 2; }
-.scene-vellum .scene-next { grid-column: 2; }
-.scene-vellum .scene-word { left: 34%; bottom: 0; }
+/* Alana: a magazine cover, title above a compact portrait and open marginalia. */
+.scene-vellum { display:grid; grid-template-columns:.8fr 1.1fr 1fr; gap:2.6rem 5%; align-items:center; padding-block:3rem 4rem; }
+.scene-vellum .scene-heading { grid-column:1/-1; text-align:center; }
+.scene-vellum h1 { max-width:none; font-size:clamp(3.5rem,7vw,6rem); }
+.scene-vellum h1 em { display:inline; }
+.scene-vellum .scene-side { align-self:end; padding-bottom:1rem; }
+.scene-side p { color:var(--muted); margin:2rem 0; font-size:.9rem; line-height:1.7; }
+.scene-vellum .scene-art { width:min(100%,25rem); justify-self:center; }
+.scene-vellum .hero-copy { align-self:center; }
+.scene-vellum .image-stage { border-radius:2px; }
+.scene-vellum .hero-portrait { aspect-ratio:4/5; object-position:center; }
 
-/* Fernanda — dark photographic opening, champagne typography. */
-.scene-botanical { background: #24221e; color: #f7f3eb; --accent:#ead8b6; --muted:#e2d7c6; --line:#8c7e68; --action:#ead8b6; --on:#24221e; }
-.scene-botanical .scene-body { display: grid; grid-template-columns: .95fr 1.05fr; gap: 2rem 8%; padding-block: 2.5rem 3.5rem; }
-.scene-botanical .scene-signature { grid-column: 1; }
-.scene-botanical .scene-art { grid-column: 2; grid-row: 1/5; margin-right: calc(-1 * var(--gutter)); }
-.scene-botanical .image-stage { height: 40rem; }
-.scene-botanical .hero-portrait { object-position: 55% 25%; }
-.scene-botanical .scene-heading { grid-column: 1; align-self: end; }
-.scene-botanical .hero-copy, .scene-botanical .scene-navigation { grid-column: 1; }
-.scene-botanical .scene-navigation { gap: 1rem; }
-.scene-botanical .scene-navigation a { font-size: .8rem; }
+/* Fernanda: landscape photograph, dark typography stage and an open index. */
+.scene-botanical { background:#24221e; color:#f7f3eb; --accent:#ead8b6; --muted:#e2d7c6; --line:#8c7e68; --action:#ead8b6; --on:#24221e; }
+.scene-botanical .scene-body { display:grid; grid-template-columns:1.1fr 1fr; gap:2rem 7%; align-items:center; padding-block:4rem 2rem; }
+.scene-botanical .scene-art { grid-column:1; grid-row:1/3; width:100%; max-width:36rem; }
+.scene-botanical .hero-portrait { aspect-ratio:960/787; object-position:center; }
+.scene-botanical .scene-heading { grid-column:2; align-self:end; }
+.scene-botanical h1 { font-size:clamp(3rem,5.6vw,5.4rem); max-width:11ch; }
+.scene-botanical h1 em { display:block; }
+.scene-botanical .hero-copy { grid-column:2; align-self:start; }
+.scene-botanical .scene-navigation { grid-column:1/-1; display:flex; justify-content:space-between; gap:1.4rem; border-top:1px solid var(--line); margin-top:1rem; padding-top:1rem; font-size:.85rem; }
 
-/* Priscilla — an open spread organized around the two subjects. */
-.scene-field { display: grid; grid-template-columns: .9fr 1.1fr .8fr; align-items: center; gap: 2rem; padding-block: 2.5rem 5rem; }
-.scene-field .scene-signature { grid-column: 1/-1; }
-.scene-field .scene-heading { grid-column: 1; grid-row: 2; margin-right: -30%; }
-.scene-field h1 { font-size: clamp(3rem,5.5vw,5.5rem); }
-.scene-field h1 em { font-family: "Clinic Editorial Italic",Georgia,serif; }
-.scene-field .scene-art { grid-column: 2; grid-row: 2/4; }
-.scene-field .image-stage { aspect-ratio: .76; border-radius: 48% 48% 0 0; }
-.scene-field .hero-copy { grid-column: 3; grid-row: 2/4; }
-.scene-field .scene-navigation { grid-column: 1; grid-row: 3; gap: .5rem; flex-direction: column; align-items: start; }
+/* Priscilla: one olive field, with two useful thematic exits. */
+.scene-field { background:#e3e6d8; }
+.scene-field .scene-body { display:grid; grid-template-columns:1.2fr 1fr; column-gap:10%; row-gap:2rem; padding-block:3.5rem 0; }
+.scene-field .scene-heading { grid-column:1; grid-row:1; align-self:end; padding-top:1rem; }
+.scene-field h1 { max-width:9ch; font-size:clamp(3.8rem,7vw,6rem); }
+.scene-field h1 em { display:block; font-family:"Clinic Editorial Italic",Georgia,serif; }
+.scene-field .hero-copy { grid-column:1; grid-row:2; align-self:start; padding-bottom:2rem; }
+.scene-field .scene-art { grid-column:2; grid-row:1/3; width:min(100%,27rem); justify-self:end; align-self:end; }
+.scene-field .hero-portrait { aspect-ratio:855/1140; }
+.scene-field .scene-navigation { display:grid; grid-template-columns:1fr 1fr; grid-column:1/-1; border-top:1px solid #a5ad96; }
+.scene-field .scene-navigation a { gap:1.3rem; padding:1.2rem 0; font-size:.85rem; }
+.scene-field .scene-navigation a:last-child { padding-left:2rem; }
+.scene-field .scene-navigation span { font-size:1.6rem; font-family:var(--head); font-weight:600; }
+.scene-field .scene-navigation svg { margin-left:auto; margin-right:1rem; }
 
-/* Rodrigo — a photographic plane and a mineral editorial column. */
-.scene-graphite { background: #222b27; color: #f7f5ea; --accent:#c2d9c8; --muted:#d2d9d0; --action:#c2d9c8; --on:#222b27; --line:#64716a; }
-.scene-graphite .scene-body { display: grid; grid-template-columns: 1fr 1.1fr; gap: 2rem 7%; padding-block: 2.5rem 4rem; }
-.scene-graphite .scene-signature { grid-column: 1; }
-.scene-graphite .scene-heading { grid-column: 1; grid-row: 2; align-self: end; }
-.scene-graphite h1 { font-size: clamp(3rem,5.7vw,5.5rem); max-width: 14ch; }
-.scene-graphite .depth { grid-column: 2; grid-row: 1/5; perspective: 1100px; align-self: center; }
-.scene-graphite .image-stage { aspect-ratio: .92; }
-.scene-graphite .hero-copy, .scene-graphite .scene-next { grid-column: 1; }
+/* Rodrigo: architectural title, landscape portrait and a clear reading route. */
+.scene-graphite { display:grid; grid-template-columns:1fr 1fr; gap:2.8rem 10%; padding-block:3rem 2rem; }
+.scene-graphite .scene-heading { grid-column:1/-1; }
+.scene-graphite h1 { max-width:22ch; font-size:clamp(3rem,6.4vw,6rem); }
+.scene-graphite h1 em { display:inline; color:var(--accent); }
+.scene-graphite .hero-copy { grid-column:1; grid-row:2; align-self:center; max-width:28rem; }
+.scene-graphite .depth { grid-column:2; grid-row:2; max-width:31rem; width:100%; perspective:1100px; justify-self:end; }
+.scene-graphite .hero-portrait { aspect-ratio:821/695; }
+.scene-graphite .scene-next { margin-top:2rem; }
+.scene-signature-row { grid-column:1/-1; display:flex; align-items:center; justify-content:space-between; gap:1.5rem; border-top:1px solid var(--line); padding-top:1rem; }
+.scene-signature-row > span { font-size:.8rem; color:var(--muted); }
 
-/* Juliana — a human portrait alongside a large typographic manifesto. */
-.scene-cobalt { display: grid; grid-template-columns: 1fr 1.1fr; gap: 2rem 7%; padding-block: 4rem 5rem; }
-.scene-cobalt .scene-heading { grid-column: 1/-1; }
-.scene-cobalt h1 { max-width: none; display: flex; gap: .2em; font-size: clamp(3rem,8vw,6rem); }
-.scene-cobalt .scene-art { grid-column: 1; grid-row: 2/4; }
-.scene-cobalt .image-stage { aspect-ratio: 1.1; border-radius: 0 0 42% 0; }
-.scene-cobalt .scene-caption { grid-column: 2; grid-row: 2; align-self: center; }
-.scene-cobalt .scene-next { grid-column: 2; grid-row: 3; }
-.scene-cobalt .scene-word { right: 3%; bottom: 0; }
+/* Juliana: a portrait at human scale, with a calm manifesto and daily routine. */
+.scene-cobalt { display:grid; grid-template-columns:.85fr 1.3fr; column-gap:10%; row-gap:2rem; padding-block:3.5rem 2rem; align-items:center; }
+.scene-cobalt .scene-art { grid-column:1; grid-row:1/3; width:min(100%,24rem); justify-self:center; }
+.scene-cobalt .image-stage { border-radius:11rem 11rem 1rem 1rem; }
+.scene-cobalt .hero-portrait { aspect-ratio:756/835; object-position:center; }
+.scene-cobalt .scene-heading { grid-column:2; grid-row:1; align-self:end; }
+.scene-cobalt h1 { max-width:12ch; font-size:clamp(3.8rem,7vw,6rem); }
+.scene-cobalt h1 em { display:block; }
+.scene-cobalt .hero-copy { grid-column:2; grid-row:2; align-self:start; }
+.scene-cobalt .scene-routine { grid-column:1/-1; display:flex; justify-content:space-between; border-top:1px solid var(--line); padding-block:.7rem; margin-top:1rem; }
+.scene-routine a { font-family:var(--head); font-size:clamp(1.05rem,2.5vw,1.5rem); }
 
-.vellum .skin-journal { border: 0; }
-.botanical .tech { border-top: 0; }
-.field .topic-reader { border-top: 1px solid var(--line); }
-.graphite .decision-room { background: var(--paper); }
-.cobalt .conscious-guide { border-top: 1px solid var(--line); }
-.scene .hero-art { animation-duration: 1s; }
-@media (prefers-reduced-motion: no-preference) {
- .scene .scene-heading { animation: scene-type-in .9s .55s cubic-bezier(.16,.8,.26,1) both; }
- .scene .scene-caption, .scene > .hero-copy { animation: scene-copy-in .85s .7s ease-out both; }
+.vellum .skin-journal { border:0; }
+.botanical .tech { border-top:0; }
+.field .topic-reader, .cobalt .conscious-guide { border-top:0; }
+.graphite .decision-room { background:var(--paper); }
+.profile { border-top:1px solid var(--line); }
+.profile .profile-signature .mark { display:none; }
+.profile .profile-signature h2 { font-size:clamp(2rem,4vw,3.2rem); }
+.reel-cover { border-radius:2px; }
+::selection { background:var(--accent); color:var(--on); }
+
+@media (prefers-reduced-motion:no-preference) {
+ .scene .scene-heading { animation:scene-type-in .9s .48s cubic-bezier(.16,1,.3,1) both; }
+ .scene .hero-copy { animation:scene-copy-in .8s .65s cubic-bezier(.16,1,.3,1) both; }
+ .scene-navigation a svg, .scene-routine a svg { transition:transform .25s ease-out; }
+ .scene-navigation a:hover svg, .scene-routine a:hover svg { transform:translate(3px,-3px); }
 }
-@keyframes scene-type-in { from { opacity: .2; transform: translateY(22px); clip-path: inset(0 0 35%); } to { clip-path: inset(0); } }
-@keyframes scene-copy-in { from { opacity: .2; transform: translateY(15px); } }
-@media (prefers-reduced-motion: reduce) {
- /* CSS immediately overrides a pending JavaScript compositing frame. */
- .scene-art { transform: none !important; }
+@keyframes scene-type-in { from { opacity:.3; transform:translateY(18px); clip-path:inset(0 0 24%); } to { clip-path:inset(0); } }
+@keyframes scene-copy-in { from { opacity:.3; transform:translateY(12px); } }
+@media (prefers-reduced-motion:reduce) { .scene-art { transform:none !important; } }
+
+@media (min-width:721px) and (max-width:1000px) {
+ .scene-vellum { grid-template-columns:1fr 1fr; gap:2rem 5%; }
+ .scene-vellum .scene-side { display:none; }
+ .scene-vellum .scene-art { grid-column:1; }
+ .scene-field .scene-body { column-gap:5%; }
+ .scene-field .scene-navigation a { flex-wrap:wrap; }
+ .scene-cobalt { column-gap:6%; }
+ .scene-cobalt h1 { font-size:clamp(3.1rem,6.8vw,5rem); }
 }
-@media (max-width: 1000px) and (min-width: 721px) {
- .scene-field { grid-template-columns: 1fr 1fr; }
- .scene-field .scene-heading { margin-right: 0; }
- .scene-field .scene-art { grid-column: 2; grid-row: 2/4; }
- .scene-field .hero-copy { grid-column: 1; grid-row: 3; }
- .scene-field .scene-navigation { grid-column: 1/-1; grid-row: 4; flex-direction: row; }
-}
-@media (max-width: 720px) {
- .scene-vellum, .scene-field, .scene-cobalt, .scene-botanical .scene-body, .scene-graphite .scene-body { display: flex; flex-direction: column; align-items: stretch; gap: 1.5rem; padding-block: 2rem 3rem; }
- .scene h1, .scene-field h1, .scene-graphite h1 { font-size: clamp(2.8rem,11.5vw,4.5rem); max-width: none; }
- .scene-vellum .scene-heading { margin: 0; }
- .scene .scene-art { width: 100%; }
- .scene .image-stage { height: auto; aspect-ratio: 1.12; }
- .scene-vellum .image-stage, .scene-field .image-stage { aspect-ratio: 1; }
- .scene .scene-caption .scene-signature { margin-bottom: .75rem; }
- .scene-botanical .scene-art { margin: 0; order: 2; }
- .scene-botanical .scene-heading { order: 1; }
- .scene-botanical .hero-copy { order: 3; }
- .scene-botanical .scene-navigation { order: 4; }
- .scene-field .scene-heading { margin: 0; }
- .scene-field .scene-navigation { flex-direction: row; }
- .scene-graphite .depth { order: 2; width: 100%; }
- .scene-graphite .scene-heading { order: 1; }
- .scene-graphite .hero-copy { order: 3; }
- .scene-graphite .scene-next { order: 4; }
- .scene-cobalt h1 { display: block; }
- .scene-word { display: none; }
+@media (max-width:720px) {
+ .scene-vellum, .scene-graphite, .scene-cobalt, .scene-botanical .scene-body, .scene-field .scene-body { display:flex; flex-direction:column; align-items:stretch; gap:1.5rem; padding-block:2.1rem 2rem; }
+ .scene h1 { font-size:clamp(2.8rem,11vw,4.2rem); max-width:none; line-height:1.05; }
+ .scene .scene-heading { order:0; align-self:stretch; text-align:left; }
+ .scene .hero-copy { order:1; align-self:stretch; padding:0; max-width:none; }
+ .scene .lead { max-width:42ch; }
+ .scene .hero-actions { margin-top:1rem; }
+ .scene .scene-art, .scene .depth { order:2; align-self:center; width:100%; max-width:29rem; }
+ .scene-vellum .scene-art { max-width:22rem; }
+ .scene-cobalt .scene-art { max-width:20rem; }
+ .scene-field .scene-art { max-width:24rem; }
+ .scene .scene-side { display:none; }
+ .scene .scene-navigation, .scene .scene-routine, .scene-signature-row { order:3; }
+ .scene .scene-navigation { gap:.5rem; }
+ .scene-botanical .scene-navigation { flex-direction:column; }
+ .scene-field .scene-navigation { display:block; }
+ .scene-field .scene-navigation a, .scene-field .scene-navigation a:last-child { padding:.8rem 0; }
+ .scene-field .scene-navigation a:last-child { border-top:1px solid #a5ad96; }
+ .scene-signature-row { align-items:start; flex-direction:column; gap:.2rem; }
+ .scene-graphite .scene-next { margin-top:1rem; }
+ .scene .image-stage { height:auto; }
+ .scene .hero-portrait { height:auto; }
+ .scene-routine a { gap:.4rem; }
+ .scene-routine svg { width:12px; }
 }
