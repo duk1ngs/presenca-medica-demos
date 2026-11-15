@@ -523,3 +523,122 @@ body.vellum .hero h1 em { font-style: normal; font-weight: 440; }
 @media (max-width: 720px) {
   .reader-spread article:nth-child(2) { margin-top: 0; }
 }
+
+/* Video-inspired compositions. Photograph, type and depth share one stage. */
+.scene { position: relative; isolation: isolate; overflow: clip; }
+.scene .hero-copy { padding: 0; min-width: 0; }
+.scene-heading { position: relative; z-index: 2; min-width: 0; }
+.scene h1 { font-family: var(--head); font-size: clamp(3.5rem,6.7vw,6rem); line-height: .98; letter-spacing: -.04em; max-width: 13ch; font-weight: 500; text-wrap: balance; }
+.scene h1 em { display: block; font-style: normal; color: var(--accent); }
+.scene .lead { max-width: 36ch; font-size: 1rem; }
+.scene .hero-actions { margin-top: 1.5rem; }
+.scene-art { position: relative; min-width: 0; z-index: 1; }
+.scene .hero-figure { padding: 0; margin: 0; border: 0; background: transparent; width: 100%; }
+.scene .image-stage { border: 0; border-radius: 0; overflow: hidden; }
+.scene .hero-art { width: 100%; height: 100%; object-fit: cover; }
+.scene-signature, .scene-next, .scene-navigation a { display: inline-flex; align-items: center; gap: 1rem; min-height: 44px; font-size: .85rem; }
+.scene-signature { font-weight: 650; }
+.scene-next { width: fit-content; }
+.scene-navigation { display: flex; gap: 2rem; flex-wrap: wrap; }
+.scene-navigation a { border-bottom: 1px solid var(--line); }
+.scene-word { position: absolute; font: 500 clamp(7rem,19vw,19rem)/1 var(--head); color: var(--soft); pointer-events: none; z-index: -1; letter-spacing: -.04em; }
+.scene-caption { z-index: 2; }
+.scene-caption .scene-signature { margin-bottom: 2rem; }
+
+/* Alana — an oversized journal title crosses the edge of a portrait. */
+.scene-vellum { display: grid; grid-template-columns: 1.1fr 1fr; grid-template-rows: auto auto; gap: 3rem 7%; padding-block: 4.5rem 5rem; align-items: center; }
+.scene-vellum .scene-heading { grid-column: 1; grid-row: 1; margin-right: -18%; }
+.scene-vellum .scene-art { grid-column: 2; grid-row: 1/3; }
+.scene-vellum .image-stage { aspect-ratio: .85; border-radius: 42% 42% 0 0; }
+.scene-vellum .hero-portrait { object-position: 50% 25%; }
+.scene-vellum .scene-caption { grid-column: 1; grid-row: 2; }
+.scene-vellum .scene-next { grid-column: 2; }
+.scene-vellum .scene-word { left: 34%; bottom: 0; }
+
+/* Fernanda — dark photographic opening, champagne typography. */
+.scene-botanical { background: #24221e; color: #f7f3eb; --accent:#ead8b6; --muted:#e2d7c6; --line:#8c7e68; --action:#ead8b6; --on:#24221e; }
+.scene-botanical .scene-body { display: grid; grid-template-columns: .95fr 1.05fr; gap: 2rem 8%; padding-block: 2.5rem 3.5rem; }
+.scene-botanical .scene-signature { grid-column: 1; }
+.scene-botanical .scene-art { grid-column: 2; grid-row: 1/5; margin-right: calc(-1 * var(--gutter)); }
+.scene-botanical .image-stage { height: 40rem; }
+.scene-botanical .hero-portrait { object-position: 55% 25%; }
+.scene-botanical .scene-heading { grid-column: 1; align-self: end; }
+.scene-botanical .hero-copy, .scene-botanical .scene-navigation { grid-column: 1; }
+.scene-botanical .scene-navigation { gap: 1rem; }
+.scene-botanical .scene-navigation a { font-size: .8rem; }
+
+/* Priscilla — an open spread organized around the two subjects. */
+.scene-field { display: grid; grid-template-columns: .9fr 1.1fr .8fr; align-items: center; gap: 2rem; padding-block: 2.5rem 5rem; }
+.scene-field .scene-signature { grid-column: 1/-1; }
+.scene-field .scene-heading { grid-column: 1; grid-row: 2; margin-right: -30%; }
+.scene-field h1 { font-size: clamp(3rem,5.5vw,5.5rem); }
+.scene-field h1 em { font-family: "Clinic Editorial Italic",Georgia,serif; }
+.scene-field .scene-art { grid-column: 2; grid-row: 2/4; }
+.scene-field .image-stage { aspect-ratio: .76; border-radius: 48% 48% 0 0; }
+.scene-field .hero-copy { grid-column: 3; grid-row: 2/4; }
+.scene-field .scene-navigation { grid-column: 1; grid-row: 3; gap: .5rem; flex-direction: column; align-items: start; }
+
+/* Rodrigo — a photographic plane and a mineral editorial column. */
+.scene-graphite { background: #222b27; color: #f7f5ea; --accent:#c2d9c8; --muted:#d2d9d0; --action:#c2d9c8; --on:#222b27; --line:#64716a; }
+.scene-graphite .scene-body { display: grid; grid-template-columns: 1fr 1.1fr; gap: 2rem 7%; padding-block: 2.5rem 4rem; }
+.scene-graphite .scene-signature { grid-column: 1; }
+.scene-graphite .scene-heading { grid-column: 1; grid-row: 2; align-self: end; }
+.scene-graphite h1 { font-size: clamp(3rem,5.7vw,5.5rem); max-width: 14ch; }
+.scene-graphite .depth { grid-column: 2; grid-row: 1/5; perspective: 1100px; align-self: center; }
+.scene-graphite .image-stage { aspect-ratio: .92; }
+.scene-graphite .hero-copy, .scene-graphite .scene-next { grid-column: 1; }
+
+/* Juliana — a human portrait alongside a large typographic manifesto. */
+.scene-cobalt { display: grid; grid-template-columns: 1fr 1.1fr; gap: 2rem 7%; padding-block: 4rem 5rem; }
+.scene-cobalt .scene-heading { grid-column: 1/-1; }
+.scene-cobalt h1 { max-width: none; display: flex; gap: .2em; font-size: clamp(3rem,8vw,6rem); }
+.scene-cobalt .scene-art { grid-column: 1; grid-row: 2/4; }
+.scene-cobalt .image-stage { aspect-ratio: 1.1; border-radius: 0 0 42% 0; }
+.scene-cobalt .scene-caption { grid-column: 2; grid-row: 2; align-self: center; }
+.scene-cobalt .scene-next { grid-column: 2; grid-row: 3; }
+.scene-cobalt .scene-word { right: 3%; bottom: 0; }
+
+.vellum .skin-journal { border: 0; }
+.botanical .tech { border-top: 0; }
+.field .topic-reader { border-top: 1px solid var(--line); }
+.graphite .decision-room { background: var(--paper); }
+.cobalt .conscious-guide { border-top: 1px solid var(--line); }
+.scene .hero-art { animation-duration: 1s; }
+@media (prefers-reduced-motion: no-preference) {
+ .scene .scene-heading { animation: scene-type-in .9s .55s cubic-bezier(.16,.8,.26,1) both; }
+ .scene .scene-caption, .scene > .hero-copy { animation: scene-copy-in .85s .7s ease-out both; }
+}
+@keyframes scene-type-in { from { opacity: .2; transform: translateY(22px); clip-path: inset(0 0 35%); } to { clip-path: inset(0); } }
+@keyframes scene-copy-in { from { opacity: .2; transform: translateY(15px); } }
+@media (prefers-reduced-motion: reduce) {
+ /* CSS immediately overrides a pending JavaScript compositing frame. */
+ .scene-art { transform: none !important; }
+}
+@media (max-width: 1000px) and (min-width: 721px) {
+ .scene-field { grid-template-columns: 1fr 1fr; }
+ .scene-field .scene-heading { margin-right: 0; }
+ .scene-field .scene-art { grid-column: 2; grid-row: 2/4; }
+ .scene-field .hero-copy { grid-column: 1; grid-row: 3; }
+ .scene-field .scene-navigation { grid-column: 1/-1; grid-row: 4; flex-direction: row; }
+}
+@media (max-width: 720px) {
+ .scene-vellum, .scene-field, .scene-cobalt, .scene-botanical .scene-body, .scene-graphite .scene-body { display: flex; flex-direction: column; align-items: stretch; gap: 1.5rem; padding-block: 2rem 3rem; }
+ .scene h1, .scene-field h1, .scene-graphite h1 { font-size: clamp(2.8rem,11.5vw,4.5rem); max-width: none; }
+ .scene-vellum .scene-heading { margin: 0; }
+ .scene .scene-art { width: 100%; }
+ .scene .image-stage { height: auto; aspect-ratio: 1.12; }
+ .scene-vellum .image-stage, .scene-field .image-stage { aspect-ratio: 1; }
+ .scene .scene-caption .scene-signature { margin-bottom: .75rem; }
+ .scene-botanical .scene-art { margin: 0; order: 2; }
+ .scene-botanical .scene-heading { order: 1; }
+ .scene-botanical .hero-copy { order: 3; }
+ .scene-botanical .scene-navigation { order: 4; }
+ .scene-field .scene-heading { margin: 0; }
+ .scene-field .scene-navigation { flex-direction: row; }
+ .scene-graphite .depth { order: 2; width: 100%; }
+ .scene-graphite .scene-heading { order: 1; }
+ .scene-graphite .hero-copy { order: 3; }
+ .scene-graphite .scene-next { order: 4; }
+ .scene-cobalt h1 { display: block; }
+ .scene-word { display: none; }
+}
