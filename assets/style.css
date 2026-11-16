@@ -665,6 +665,34 @@ body.vellum .hero h1 em { font-style: normal; font-weight: 440; }
  .scene-routine svg { width:12px; }
 }
 
+/* Five distinct visual rhythms, keeping the original photographs intact. */
+.scene-vellum .scene-heading { text-align:left; }
+.scene-vellum h1 { max-width:15ch; line-height:.94; }
+.scene-vellum h1 em { display:block; margin-left:clamp(1rem,9vw,9rem); }
+.scene-vellum .scene-art { justify-self:start; }
+.scene-vellum .scene-side { align-self:center; }
+.scene-vellum .scene-next, .scene-graphite .scene-next { border-bottom:1px solid var(--accent); }
+.scene-botanical .scene-body { grid-template-columns:1fr 1fr; gap:2.5rem 9%; }
+.scene-botanical .scene-heading { align-self:center; }
+.scene-botanical .scene-heading h1 { letter-spacing:-.025em; }
+.scene-botanical .scene-navigation a { font-size:.9rem; }
+.scene-field .scene-heading h1 { max-width:10ch; }
+.scene-field .scene-navigation a span { font-size:clamp(1.6rem,3.2vw,2.6rem); font-weight:400; }
+.scene-field .scene-navigation a { transition:color .2s ease; }
+.scene-field .scene-navigation a:hover { color:var(--accent); }
+.scene-graphite .scene-heading h1 { max-width:20ch; }
+.scene-graphite .scene-heading h1 em { display:block; margin-left:clamp(0rem,5vw,5rem); }
+.scene-graphite .scene-signature-row { border-top:2px solid var(--accent); }
+.scene-cobalt .scene-routine { border-top:2px solid var(--accent); }
+.scene-cobalt .scene-routine a { font-size:clamp(1.3rem,3vw,2rem); font-weight:400; }
+.scene-cobalt .scene-heading h1 em { font-family:var(--serif); font-style:italic; font-weight:400; }
+@media (max-width:720px) {
+ .scene-vellum h1 em, .scene-graphite .scene-heading h1 em { margin-left:0; }
+ .scene-vellum h1 { max-width:none; }
+ .scene-field .scene-navigation a span { font-size:1.6rem; }
+}
+@media (prefers-reduced-motion:reduce) { .scene-field .scene-navigation a { transition:none; } }
+
 /* Ambient light is decorative and never covers text or controls. */
 body:not(.catalog) { position:relative; isolation:isolate; }
 body:not(.catalog)::before { content:""; position:fixed; inset:-15%; z-index:-1; pointer-events:none; opacity:.5; background:radial-gradient(ellipse at 85% 25%, color-mix(in srgb, var(--accent) 14%, transparent), transparent 38%), radial-gradient(ellipse at 12% 72%, color-mix(in srgb, var(--accent) 9%, transparent), transparent 40%); }
