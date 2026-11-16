@@ -758,10 +758,13 @@ html[data-appearance="dark"] .technology-lab { color:#f7f3eb; }
 .premium .hero-figure {margin:0;background:none;border:0;padding:0;}
 .premium .image-stage {border-radius:0;border:0;background:none;}
 .premium .hero-art {height:auto;width:100%;object-fit:contain;}
-/* Subject-following artwork: source pixels stay intact. No geometric frame. */
-.premium .hero-portrait {mask-image:url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22756%22%20height%3D%22835%22%20viewBox%3D%220%200%20756%20835%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22fade%22%20x1%3D%220%22%20y1%3D%22685%22%20x2%3D%220%22%20y2%3D%22822%22%20gradientUnits%3D%22userSpaceOnUse%22%3E%3Cstop%20stop-color%3D%22white%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22white%22%20stop-opacity%3D%220%22%2F%3E%3C%2FlinearGradient%3E%3Cfilter%20id%3D%22edge%22%20x%3D%22-5%25%22%20y%3D%22-5%25%22%20width%3D%22110%25%22%20height%3D%22110%25%22%3E%3CfeGaussianBlur%20stdDeviation%3D%222%22%2F%3E%3C%2Ffilter%3E%3C%2Fdefs%3E%3Cpath%20d%3D%22M438%20131%20C411%20129%20391%20149%20371%20166%20C341%20184%20319%20215%20304%20244%20C290%20271%20278%20291%20281%20315%20C274%20348%20277%20380%20273%20407%20L252%20458%20C218%20472%20198%20481%20181%20506%20C159%20539%20136%20575%20124%20612%20C111%20652%2094%20682%2095%20726%20L106%20775%20L352%20818%20L756%20818%20L756%20705%20C732%20658%20711%20614%20693%20578%20C670%20538%20640%20517%20593%20489%20L587%20456%20C593%20422%20585%20393%20578%20367%20C569%20335%20566%20311%20556%20278%20C545%20238%20530%20198%20507%20175%20C483%20153%20459%20136%20423%20127%20Z%22%20fill%3D%22url(%23fade)%22%20filter%3D%22url(%23edge)%22%2F%3E%3C%2Fsvg%3E');mask-size:100% 100%;mask-repeat:no-repeat;-webkit-mask-image:url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22756%22%20height%3D%22835%22%20viewBox%3D%220%200%20756%20835%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22fade%22%20x1%3D%220%22%20y1%3D%22685%22%20x2%3D%220%22%20y2%3D%22822%22%20gradientUnits%3D%22userSpaceOnUse%22%3E%3Cstop%20stop-color%3D%22white%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22white%22%20stop-opacity%3D%220%22%2F%3E%3C%2FlinearGradient%3E%3Cfilter%20id%3D%22edge%22%20x%3D%22-5%25%22%20y%3D%22-5%25%22%20width%3D%22110%25%22%20height%3D%22110%25%22%3E%3CfeGaussianBlur%20stdDeviation%3D%222%22%2F%3E%3C%2Ffilter%3E%3C%2Fdefs%3E%3Cpath%20d%3D%22M438%20131%20C411%20129%20391%20149%20371%20166%20C341%20184%20319%20215%20304%20244%20C290%20271%20278%20291%20281%20315%20C274%20348%20277%20380%20273%20407%20L252%20458%20C218%20472%20198%20481%20181%20506%20C159%20539%20136%20575%20124%20612%20C111%20652%2094%20682%2095%20726%20L106%20775%20L352%20818%20L756%20818%20L756%20705%20C732%20658%20711%20614%20693%20578%20C670%20538%20640%20517%20593%20489%20L587%20456%20C593%20422%20585%20393%20578%20367%20C569%20335%20566%20311%20556%20278%20C545%20238%20530%20198%20507%20175%20C483%20153%20459%20136%20423%20127%20Z%22%20fill%3D%22url(%23fade)%22%20filter%3D%22url(%23edge)%22%2F%3E%3C%2Fsvg%3E');-webkit-mask-size:100% 100%;-webkit-mask-repeat:no-repeat;}
-.premium-vellum .image-stage {aspect-ratio:37/45;overflow:hidden;}
-.premium-vellum .hero-art {width:145.946%;max-width:none;}
+/* Full photographic scenes: no silhouette clipping, path mask or geometric frame. */
+.premium .image-stage {position:relative;aspect-ratio:auto;overflow:visible;}
+.premium .hero-portrait {mask:none;-webkit-mask:none;width:100%;height:auto;max-width:100%;}
+.premium-photo {--photo-edge:var(--paper);}
+.premium .image-stage::after {content:"";position:absolute;inset:-1px;pointer-events:none;background:linear-gradient(0deg,var(--photo-edge),transparent 12%),linear-gradient(180deg,var(--photo-edge),transparent 6%),linear-gradient(90deg,var(--photo-edge),transparent 6%,transparent 94%,var(--photo-edge));}
+.premium-botanical .premium-photo {--photo-edge:#24221e;}
+.ai-photo-note {font-size:.7rem;line-height:1.5;color:var(--muted);margin-top:.6rem;}
 .premium-jump {display:flex;align-items:center;justify-content:space-between;gap:1.5rem;min-height:48px;text-decoration:none;font-size:.9rem;}
 .premium-jump:hover {text-decoration:underline;text-underline-offset:.3em;}
 .premium-jump svg {flex-shrink:0;}
@@ -805,6 +808,50 @@ html[data-appearance="dark"] .technology-lab { color:#f7f3eb; }
 .premium-daily .premium-jump {font-size:clamp(1rem,2.5vw,1.6rem);}
 @media(prefers-reduced-motion:no-preference){.premium-title {animation:premium-title-in .8s .5s cubic-bezier(.16,1,.3,1) both;}}
 @keyframes premium-title-in {from{opacity:.35;transform:translateY(18px);clip-path:inset(0 0 20%);}to{clip-path:inset(0);}}
+/* Editorial light is section-bound, decorative, and has no animated blur cost. */
+.illustrated-process,.contact-wrap {position:relative;isolation:isolate;}
+.illustrated-process::before,.contact-wrap::before {content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 78% 42%,color-mix(in srgb,var(--accent) 19%,transparent),transparent 62%);}
+.contact-wrap::before {background:radial-gradient(ellipse at 16% 80%,color-mix(in srgb,var(--accent) 22%,transparent),transparent 65%);}
+.premium .button:hover {box-shadow:0 6px 24px color-mix(in srgb,var(--accent) 20%,transparent);}
+.illustrated-process .process {display:grid;grid-template-columns:1fr 1fr;gap:2rem 6%;align-items:start;}
+.care-illustration {margin:0;min-width:0;}
+.care-illustration img {width:100%;height:auto;display:block;border:0;border-radius:0;}
+.care-illustration figcaption {font-size:.73rem;line-height:1.6;color:var(--muted);margin-top:.8rem;max-width:52ch;}
+.vellum .illustrated-process .care-illustration {grid-column:2;grid-row:1/3;align-self:center;}
+.vellum .illustrated-process ol {grid-column:1;grid-row:2;}
+.botanical .illustrated-process .section-heading {grid-column:1/-1;max-width:46rem;}
+.botanical .illustrated-process .care-illustration {grid-column:1/-1;}
+.botanical .illustrated-process ol {grid-column:1/-1;display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;}
+.field .illustrated-process .care-illustration {grid-column:1;grid-row:1/3;align-self:center;}
+.field .illustrated-process .section-head,.field .illustrated-process ol {grid-column:2;}
+.graphite .illustrated-process .section-heading {grid-column:1/-1;max-width:48rem;}
+.graphite .illustrated-process .care-illustration {grid-column:1;}
+.graphite .illustrated-process ol {grid-column:2;}
+.cobalt .illustrated-process .section-heading {grid-column:1/-1;text-align:center;max-width:46rem;margin-inline:auto;}
+.cobalt .illustrated-process .care-illustration {grid-column:1/-1;max-width:62rem;justify-self:center;}
+.cobalt .illustrated-process ol {grid-column:1/-1;display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;}
+/* Photography reaches the page edge instead of sitting in a framed card. */
+.premium-vellum,.premium-field {position:relative;isolation:isolate;min-height:760px;}
+.premium-vellum .premium-photo,.premium-field .premium-photo {position:absolute;grid-area:auto;top:0;bottom:0;right:calc((100vw - 100%)/-2);width:52vw;max-width:none;margin:0;z-index:-1;}
+.premium .hero-figure,.premium .image-stage {height:100%;}
+.premium .hero-art {height:100%;object-fit:cover;object-position:50% 18%;}
+.premium-vellum .image-stage::after,.premium-field .image-stage::after {background:linear-gradient(90deg,var(--photo-edge),transparent 35%),linear-gradient(0deg,var(--photo-edge),transparent 14%);}
+.premium-field .premium-photo {bottom:7rem;}
+.premium-field .hero-art,.premium-botanical .hero-art {object-position:50% 0%;}
+.premium-field .ai-photo-note {bottom:3rem;left:auto;right:1.25rem;}
+.premium-field .premium-fields {align-self:end;}
+.premium-botanical .premium-stage {position:relative;isolation:isolate;min-height:650px;}
+.premium-botanical .premium-photo {position:absolute;grid-area:auto;top:-5rem;bottom:-5rem;left:calc((100vw - 100%)/-2);width:47vw;max-width:none;z-index:-1;}
+.premium-botanical .image-stage::after {background:linear-gradient(270deg,var(--photo-edge),transparent 30%),linear-gradient(0deg,var(--photo-edge),transparent 28%);}
+.premium-botanical .premium-index {align-self:end;}
+.premium-conversation {position:relative;isolation:isolate;min-height:580px;}
+.premium-conversation .premium-copy {grid-column:2;}
+.premium-conversation .premium-photo {position:absolute;left:calc((100vw - 100%)/-2);top:0;bottom:0;width:47vw;max-width:none;z-index:-1;}
+.premium-conversation .image-stage::after {background:linear-gradient(270deg,var(--photo-edge),transparent 27%),linear-gradient(0deg,var(--photo-edge),transparent 12%);}
+.premium-graphite .premium-photo {max-width:31rem;}
+.premium .ai-photo-note {position:absolute;bottom:.6rem;left:1rem;right:1rem;z-index:2;font-size:.7rem;color:var(--ink);background:var(--paper);width:fit-content;padding:.15rem .4rem;}
+.premium-botanical .ai-photo-note {--paper:#24221e;--ink:#f7f3eb;}
+.graphite .illustrated-process ol {display:block;}
 @media(max-width:720px){
  .premium,.premium-botanical .premium-stage {display:flex;flex-direction:column;align-items:stretch;gap:1.5rem;}
  .premium {padding-block:2rem 3rem;}
@@ -824,4 +871,18 @@ html[data-appearance="dark"] .technology-lab { color:#f7f3eb; }
  .premium-conversation {display:flex;flex-direction:column;gap:1.5rem;}
  .premium-cobalt .premium-daily {margin-top:1rem;gap:.8rem;}
  .premium-botanical .premium-index {display:flex;flex-direction:column;}
+ .illustrated-process .process {display:flex;flex-direction:column;gap:2rem;}
+ .illustrated-process .process>div,.illustrated-process .care-illustration,.illustrated-process ol {width:100%;max-width:none;}
+ .botanical .illustrated-process ol,.cobalt .illustrated-process ol {display:block;}
+ .illustrated-process .care-illustration {order:1;}
+ .illustrated-process ol {order:2;}
+ .premium-vellum,.premium-field,.premium-botanical .premium-stage {min-height:0;}
+ .premium .premium-photo,.premium-conversation .premium-photo {position:relative;inset:auto;width:100vw;max-width:none!important;z-index:1;align-self:center;margin:0;}
+ .premium .hero-figure {position:relative;height:auto;}
+ .premium .image-stage {height:auto;}
+ .premium .hero-art {height:auto;object-fit:contain;}
+ .premium .image-stage::after {background:linear-gradient(0deg,var(--photo-edge),transparent 12%),linear-gradient(180deg,var(--photo-edge),transparent 7%);}
+ .premium-conversation {min-height:0;}
+ .premium .ai-photo-note {left:1.25rem;}
+ .premium-depth {max-width:100vw!important;}
 }
