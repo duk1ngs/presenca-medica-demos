@@ -838,7 +838,7 @@ html[data-appearance="dark"] .technology-lab { color:#f7f3eb; }
 .premium-vellum .image-stage::after,.premium-field .image-stage::after {background:linear-gradient(90deg,var(--photo-edge),transparent 35%),linear-gradient(0deg,var(--photo-edge),transparent 14%);}
 .premium-field .premium-photo {bottom:7rem;}
 .premium-field .hero-art,.premium-botanical .hero-art {object-position:50% 0%;}
-.premium-field .ai-photo-note {bottom:3rem;left:auto;right:1.25rem;}
+.premium.premium-field .ai-photo-note {bottom:3rem;left:auto;right:1.25rem;}
 .premium-field .premium-fields {align-self:end;}
 .premium-botanical .premium-stage {position:relative;isolation:isolate;min-height:650px;}
 .premium-botanical .premium-photo {position:absolute;grid-area:auto;top:-5rem;bottom:-5rem;left:calc((100vw - 100%)/-2);width:47vw;max-width:none;z-index:-1;}
