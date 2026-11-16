@@ -963,3 +963,50 @@ html[data-appearance="dark"] .clinic-backdrop {opacity:.16;}
 }
 @media(prefers-reduced-motion:no-preference){[data-wave-mode="css"][data-wave-active="true"]::before {animation:clinical-wave 14s ease-in-out infinite alternate;}@keyframes clinical-wave{to{transform:translateY(15%) rotate(10deg);}}}
 @media(prefers-reduced-motion:reduce){.gradient-waves::before {animation:none!important;}}
+
+/* Straight consultation rail + gentle native coverflow, adapted from user brief. */
+.medical-feature28>.section-heading {margin-bottom:1.2rem;}
+.rail-toolbar {display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:1.5rem;}
+.rail-toolbar p {color:var(--muted);font-size:.9rem;}
+.rail-controls {display:flex;align-items:center;gap:.9rem;flex-shrink:0;}
+.rail-controls[hidden] {display:none;}
+.rail-controls button {width:44px;height:44px;border:1px solid var(--line);border-radius:50%;color:var(--ink);background:var(--paper);cursor:pointer;}
+.rail-controls button:disabled {opacity:.4;cursor:default;}
+.rail-controls span {font-size:.78rem;font-variant-numeric:tabular-nums;min-width:2.5rem;text-align:center;}
+.medical-bento {display:grid;grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:clamp(280px,27vw,350px);gap:1rem;align-items:stretch;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;scrollbar-color:var(--accent) transparent;padding:.4rem .15rem 1.4rem;scroll-padding-inline:.15rem;cursor:grab;}
+.medical-bento .bento-card {grid-column:auto;min-height:370px;height:100%;display:flex;flex-direction:column;justify-content:flex-start;gap:1.7rem;scroll-snap-align:start;padding:1.6rem;}
+.medical-bento .card-main {flex:1;position:relative;z-index:2;}
+.medical-bento .bento-card h3 {font-size:1.35rem;}
+.medical-bento .bento-card p {font-size:.94rem;}
+.card-action-footer {position:relative;z-index:2;width:100%;border-top:1px solid var(--line);padding-top:1rem;margin-top:auto;}
+.card-action-footer .card-action {display:flex;align-items:center;justify-content:space-between;width:100%;gap:.7rem;min-height:48px;margin:0;padding:.35rem .4rem .35rem .75rem;border:1px solid color-mix(in srgb,var(--accent) 30%,transparent);border-radius:99px;background:linear-gradient(110deg,color-mix(in srgb,var(--soft) 55%,transparent),transparent);font:600 .78rem/1.35 Studio,Arial,sans-serif;color:var(--ink);text-decoration:none;transition:background-color .22s,color .22s,border-color .22s;}
+.card-action-icon {display:flex;align-items:center;justify-content:center;flex:0 0 34px;height:34px;border-radius:50%;background:var(--action);color:var(--on);transition:transform .22s;}
+.card-action:hover,.card-action:focus-visible {background-color:var(--soft);border-color:var(--accent);}
+.card-action:hover .card-action-icon {transform:translateX(2px);}
+.bento-waves .card-action-footer {border-color:#ffffff35;}
+.bento-waves .card-action {color:#fff;border-color:#ffffff50;background:linear-gradient(110deg,#ffffff15,transparent);}
+.bento-waves .card-action:hover {background-color:#ffffff20;}
+.bento-waves .card-action-icon {background:#e5eee7;color:#15231c;}
+.medical-bento:focus-visible,.reel-track:focus-visible,.rail-controls button:focus-visible {outline:2px solid var(--accent);outline-offset:4px;}
+.medical-bento[data-dragging],.reel-track[data-dragging] {cursor:grabbing;scroll-snap-type:none;user-select:none;}
+.care-illustration img {aspect-ratio:3/2;object-fit:cover;}
+/* Portrait and scene pixels are unmarked; provenance is consolidated in footer. */
+.ai-photo-note {display:none;}
+.reel-track {--reel-width:clamp(270px,30vw,360px);gap:1.6rem;padding:1.5rem max(.2rem,calc((100% - var(--reel-width))/2)) 2rem;overscroll-behavior-x:contain;cursor:grab;scroll-padding-inline:max(.2rem,calc((100% - var(--reel-width))/2));}
+.reel-track .reel-slide {display:flex;flex-direction:column;flex:0 0 var(--reel-width);border:1px solid color-mix(in srgb,var(--line) 55%,transparent);border-radius:22px;overflow:hidden;background:var(--paper);perspective:1000px;scroll-snap-align:start;}
+.reel-visual {width:100%;display:block;background:var(--soft);}
+.reel-visual .reel-cover {width:100%;height:320px;max-width:none;aspect-ratio:auto;border-radius:0;object-fit:cover;object-position:center 25%;}
+.reel-card-copy {display:flex;flex-direction:column;align-items:stretch;justify-items:stretch;gap:1rem;padding:1.35rem;flex:1;}
+.reel-card-copy h3 {font:500 1.4rem/1.25 var(--head);min-height:3.5em;margin:0;}
+.reel-card-copy .card-action-footer {display:flex;flex-direction:column;gap:.6rem;}
+.reel-card-copy button.card-action {cursor:pointer;}
+.reel-card-copy .card-action span:first-child {display:flex;gap:.5rem;align-items:center;}
+.reel-card-copy .card-action[hidden] {display:none;}
+.reel-card-copy .instagram-link {font-size:.75rem;min-height:44px;display:flex;align-items:center;justify-content:center;text-underline-offset:.2em;margin:0;}
+@media(max-width:720px){.rail-toolbar {align-items:flex-start;}.rail-toolbar p {max-width:12rem;font-size:.8rem;}.rail-controls {gap:.4rem;}.medical-bento {grid-auto-columns:min(84vw,340px);}.medical-bento .bento-card {min-height:360px;}.reel-track {--reel-width:min(78vw,340px);}.reel-visual .reel-cover {height:300px;}.reel-card-copy h3 {min-height:2.6em;}}
+@media(prefers-reduced-motion:no-preference){
+ .medical-bento .bento-card[data-in-view] {animation:medical-straight-in .65s cubic-bezier(.2,.7,.2,1) both;}
+ @keyframes medical-straight-in {from {opacity:.45;transform:translateX(-42px);}to {opacity:1;transform:translateX(0);}}
+ .reel-track .reel-visual {transform:translateZ(var(--cover-depth,0px)) rotateY(var(--cover-angle,0deg));}
+}
+@media(prefers-reduced-motion:reduce){.medical-bento .bento-card[data-in-view],.reel-track .reel-visual {animation:none!important;transform:none!important;}.card-action-icon {transition:none;}}

@@ -96,6 +96,9 @@ if (carousel) {
   const close = player.querySelector('[data-close]');
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
   let active = 0;
+  let destination = 0;
+  let settleTimer = 0;
+  let navigationFrame = 0;
   let trigger;
 
   function closeVideo(restoreFocus = false) {
@@ -118,23 +121,31 @@ if (carousel) {
   }
 
   function move(index) {
-    if (index < 0 || index >= slides.length || index === active) return;
+    if (index < 0 || index >= slides.length) return;
     closeVideo();
+    destination = index;
     update(index);
-    track.scrollTo({left: position(index), behavior: reduced.matches ? 'instant' : 'smooth'});
+    // Coalesce rapid keys after layout/media changes, cancelling the previous
+    // request before the browser paints another smooth-scroll frame.
+    cancelAnimationFrame(navigationFrame);
+    navigationFrame = requestAnimationFrame(() => {
+      track.scrollTo({left: position(index), behavior: reduced.matches ? 'instant' : 'smooth'});
+    });
   }
 
-  prev.addEventListener('click', () => move(active - 1));
-  next.addEventListener('click', () => move(active + 1));
+  prev.addEventListener('click', () => move(destination - 1));
+  next.addEventListener('click', () => move(destination + 1));
   track.addEventListener('scroll', () => {
     const nearest = slides.reduce((best, _, index) =>
       Math.abs(position(index) - track.scrollLeft) < Math.abs(position(best) - track.scrollLeft) ? index : best, 0);
     if (nearest !== active) update(nearest);
+    clearTimeout(settleTimer);
+    settleTimer = setTimeout(() => { destination = active; }, 100);
   }, {passive: true});
   track.addEventListener('keydown', (event) => {
     if (event.target !== track || !['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
     event.preventDefault();
-    const destinations = {ArrowLeft: active - 1, ArrowRight: active + 1, Home: 0, End: slides.length - 1};
+    const destinations = {ArrowLeft: destination - 1, ArrowRight: destination + 1, Home: 0, End: slides.length - 1};
     move(destinations[event.key]);
   });
 

@@ -20,6 +20,11 @@ Native adaptation of the grid, feature composition and GLSL wave equations.
 React/Motion/OGL bindings replaced by browser APIs. Medical content, styling,
 responsive behavior, reduced-motion handling and assets adapted locally.
 
+Coverflow interaction revision
+Functional reference: carousel specification supplied by the project owner.
+Locally implemented native scroll, internal media tilt, finite navigation and
+action footer. No React source, demo media or dependency installation copied.
+
 MIT License — ShadcnSpace component portions
 Copyright (c) ShadcnSpace
 
