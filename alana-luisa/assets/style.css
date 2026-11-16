@@ -746,3 +746,82 @@ html[data-appearance="dark"] .scene-botanical, html[data-appearance="dark"] .tec
 html[data-appearance="dark"] .scene-botanical { color:#f7f3eb; }
 html[data-appearance="dark"] .technology-lab { color:#f7f3eb; }
 @media (prefers-reduced-motion:reduce) { .button, .reel .reel-play, .theme-toggle { transition:none; } }
+
+/* Independent compositions, one shared accessible technical foundation. */
+.premium {padding-block:clamp(2rem,5vw,5rem);}
+.premium h1 {font-size:clamp(3.1rem,6.8vw,6.7rem);letter-spacing:-.035em;line-height:1.02;font-weight:450;max-width:15ch;}
+.premium h1 em {font-style:normal;display:inline;color:inherit;}
+.premium-copy {position:relative;z-index:2;max-width:34rem;}
+.premium .lead {font-size:clamp(1rem,1.3vw,1.15rem);line-height:1.65;}
+.premium .hero-actions {display:flex;align-items:center;gap:1rem;flex-wrap:wrap;}
+.premium-photo {min-width:0;position:relative;}
+.premium .hero-figure {margin:0;background:none;border:0;padding:0;}
+.premium .image-stage {border-radius:0;border:0;background:none;}
+.premium .hero-art {height:auto;width:100%;object-fit:contain;}
+/* Subject-following artwork: source pixels stay intact. No geometric frame. */
+.premium .hero-portrait {mask-image:url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221080%22%20height%3D%221350%22%20viewBox%3D%220%200%201080%201350%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22fade%22%20x1%3D%220%22%20y1%3D%22690%22%20x2%3D%220%22%20y2%3D%22880%22%20gradientUnits%3D%22userSpaceOnUse%22%3E%3Cstop%20stop-color%3D%22white%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22white%22%20stop-opacity%3D%220%22%2F%3E%3C%2FlinearGradient%3E%3Cfilter%20id%3D%22edge%22%20x%3D%22-5%25%22%20y%3D%22-5%25%22%20width%3D%22110%25%22%20height%3D%22110%25%22%3E%3CfeGaussianBlur%20stdDeviation%3D%222%22%2F%3E%3C%2Ffilter%3E%3C%2Fdefs%3E%3Cpath%20d%3D%22M390%2028%20C320%2012%20265%2045%20235%2092%20C204%20137%20215%20194%20200%20247%20C189%20310%20167%20361%20157%20405%20L127%20450%20C84%20466%2035%20471%2018%20486%20C5%20533%2013%20574%2014%20615%20L22%20705%20L42%20790%20L95%20890%20L710%20890%20L732%20696%20C696%20659%20680%20628%20664%20579%20C644%20515%20619%20474%20590%20452%20C586%20401%20553%20368%20551%20319%20C536%20286%20551%20236%20546%20194%20C541%20117%20518%2073%20469%2048%20C443%2035%20418%2033%20390%2028%20Z%22%20fill%3D%22url(%23fade)%22%20filter%3D%22url(%23edge)%22%2F%3E%3C%2Fsvg%3E');mask-size:100% 100%;mask-repeat:no-repeat;-webkit-mask-image:url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221080%22%20height%3D%221350%22%20viewBox%3D%220%200%201080%201350%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22fade%22%20x1%3D%220%22%20y1%3D%22690%22%20x2%3D%220%22%20y2%3D%22880%22%20gradientUnits%3D%22userSpaceOnUse%22%3E%3Cstop%20stop-color%3D%22white%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22white%22%20stop-opacity%3D%220%22%2F%3E%3C%2FlinearGradient%3E%3Cfilter%20id%3D%22edge%22%20x%3D%22-5%25%22%20y%3D%22-5%25%22%20width%3D%22110%25%22%20height%3D%22110%25%22%3E%3CfeGaussianBlur%20stdDeviation%3D%222%22%2F%3E%3C%2Ffilter%3E%3C%2Fdefs%3E%3Cpath%20d%3D%22M390%2028%20C320%2012%20265%2045%20235%2092%20C204%20137%20215%20194%20200%20247%20C189%20310%20167%20361%20157%20405%20L127%20450%20C84%20466%2035%20471%2018%20486%20C5%20533%2013%20574%2014%20615%20L22%20705%20L42%20790%20L95%20890%20L710%20890%20L732%20696%20C696%20659%20680%20628%20664%20579%20C644%20515%20619%20474%20590%20452%20C586%20401%20553%20368%20551%20319%20C536%20286%20551%20236%20546%20194%20C541%20117%20518%2073%20469%2048%20C443%2035%20418%2033%20390%2028%20Z%22%20fill%3D%22url(%23fade)%22%20filter%3D%22url(%23edge)%22%2F%3E%3C%2Fsvg%3E');-webkit-mask-size:100% 100%;-webkit-mask-repeat:no-repeat;}
+.premium-vellum .image-stage {aspect-ratio:37/45;overflow:hidden;}
+.premium-vellum .hero-art {width:145.946%;max-width:none;}
+.premium-jump {display:flex;align-items:center;justify-content:space-between;gap:1.5rem;min-height:48px;text-decoration:none;font-size:.9rem;}
+.premium-jump:hover {text-decoration:underline;text-underline-offset:.3em;}
+.premium-jump svg {flex-shrink:0;}
+.premium-vellum {display:grid;grid-template-columns:1.25fr .75fr;gap:2rem 6%;align-items:start;}
+.premium-vellum .premium-title {grid-column:1;grid-row:1;padding-top:2rem;}
+.premium-vellum h1 {font-family:var(--serif);font-weight:400;max-width:12ch;}
+.premium-vellum .premium-photo {grid-column:2;grid-row:1/4;margin-top:1rem;}
+.premium-vellum .premium-copy {grid-column:1;grid-row:2;max-width:32rem;}
+.premium-vellum .premium-margin {grid-column:1;grid-row:3;display:flex;align-items:center;gap:2rem;font-size:.8rem;border-top:1px solid var(--line);padding-top:1rem;}
+.premium-vellum .premium-margin span {max-width:12ch;}
+.premium-vellum .premium-jump {flex:1;}
+.premium-botanical {background:#24221e;color:#f7f3eb;--accent:#ead8b6;--muted:#e2d7c6;--action:#ead8b6;--on:#24221e;--line:#8c7e68;}
+.premium-botanical .premium-stage {display:grid;grid-template-columns:.85fr 1.15fr;gap:2rem 8%;align-items:center;}
+.premium-botanical .premium-photo {grid-column:1;grid-row:1/3;}
+.premium-botanical .premium-title {grid-column:2;grid-row:1;align-self:end;}
+.premium-botanical h1 {font-size:clamp(3rem,6vw,5.6rem);max-width:11ch;}
+.premium-botanical .premium-copy {grid-column:2;grid-row:2;align-self:start;}
+.premium-botanical .premium-index {grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:5%;border-top:1px solid var(--line);padding-top:1rem;}
+.premium-field {display:grid;grid-template-columns:1.2fr .8fr;gap:2rem 8%;align-items:center;}
+.premium-field .premium-field-type {max-width:40rem;}
+.premium-field h1 {font-size:clamp(3rem,7vw,6.7rem);max-width:10ch;}
+.premium-field h1 em {font-family:"Clinic Editorial Italic",Georgia,serif;}
+.premium-field .premium-photo {max-width:25rem;justify-self:end;}
+.premium-field .premium-fields {grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;border-block:1px solid var(--line);}
+.premium-field .premium-fields a {padding:1rem 0;font:400 clamp(1.6rem,3.5vw,3rem)/1 var(--head);}
+.premium-field .premium-fields a:last-child {padding-left:3rem;border-left:1px solid var(--line);}
+.premium-field .premium-fields a:first-child {padding-right:3rem;}
+.premium-graphite {display:grid;grid-template-columns:.8fr 1.2fr;gap:2rem 7%;align-items:start;}
+.premium-graphite .premium-title {grid-column:1/-1;grid-row:1;}
+.premium-graphite h1 {max-width:22ch;font-size:clamp(3rem,6.3vw,6rem);font-weight:500;}
+.premium-graphite .premium-depth {grid-column:1;grid-row:2/4;perspective:1100px;}
+.premium-graphite .premium-copy {grid-column:2;grid-row:2;padding-top:1rem;}
+.premium-graphite .premium-route {grid-column:2;grid-row:3;border-top:1px solid var(--line);}
+.premium-graphite .premium-route a {border-bottom:1px solid var(--line);}
+.premium-cobalt .premium-title {text-align:center;margin-bottom:3rem;}
+.premium-cobalt h1 {max-width:none;font-size:clamp(3rem,8vw,7rem);font-weight:450;}
+.premium-cobalt h1 em {font-family:var(--serif);font-style:italic;font-weight:400;}
+.premium-conversation {display:grid;grid-template-columns:.85fr 1.15fr;gap:12%;align-items:center;max-width:64rem;margin:auto;}
+.premium-conversation .premium-photo {max-width:22rem;}
+.premium-cobalt .premium-daily {display:flex;justify-content:space-between;gap:2rem;border-top:1px solid var(--line);padding-top:1rem;margin-top:3rem;}
+.premium-daily .premium-jump {font-size:clamp(1rem,2.5vw,1.6rem);}
+@media(prefers-reduced-motion:no-preference){.premium-title {animation:premium-title-in .8s .5s cubic-bezier(.16,1,.3,1) both;}}
+@keyframes premium-title-in {from{opacity:.35;transform:translateY(18px);clip-path:inset(0 0 20%);}to{clip-path:inset(0);}}
+@media(max-width:720px){
+ .premium,.premium-botanical .premium-stage {display:flex;flex-direction:column;align-items:stretch;gap:1.5rem;}
+ .premium {padding-block:2rem 3rem;}
+ .premium-title {order:0;}
+ .premium h1 {font-size:clamp(2.8rem,11vw,4.4rem);max-width:none;line-height:1.05;}
+ .premium-copy {order:1;max-width:none;}
+ .premium-photo,.premium-depth {order:2;width:100%;max-width:26rem!important;align-self:center;}
+ .premium nav,.premium-margin {order:3;}
+ .premium-vellum .premium-title {padding:0;}
+ .premium-vellum .premium-margin {flex-wrap:wrap;}
+ .premium-field .premium-photo {margin-top:1rem;}
+ .premium-field .premium-fields {display:grid;}
+ .premium-field .premium-fields a:first-child {padding-right:1rem;}
+ .premium-field .premium-fields a:last-child {padding-left:1rem;}
+ .premium-graphite .premium-copy {padding-top:0;}
+ .premium-cobalt .premium-title {text-align:left;margin-bottom:0;}
+ .premium-conversation {display:flex;flex-direction:column;gap:1.5rem;}
+ .premium-cobalt .premium-daily {margin-top:1rem;gap:.8rem;}
+ .premium-botanical .premium-index {display:flex;flex-direction:column;}
+}
