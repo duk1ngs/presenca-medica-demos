@@ -693,6 +693,33 @@ body.vellum .hero h1 em { font-style: normal; font-weight: 440; }
 }
 @media (prefers-reduced-motion:reduce) { .scene-field .scene-navigation a { transition:none; } }
 
+/* Art direction: make each editorial section read as a distinct experience. */
+.vellum .skin-journal { display:grid; grid-template-columns:1.1fr .9fr; gap:clamp(2rem,7vw,7rem); align-items:start; }
+.vellum .skin-journal .journal-title { grid-row:span 2; }
+.vellum .skin-journal h2 { font-family:var(--serif); font-weight:400; font-size:clamp(2.8rem,5vw,5rem); line-height:1.08; }
+.vellum .journal-notes { display:grid; gap:2rem; }
+.vellum .journal-notes article { border:0; padding:0 0 1.5rem; border-bottom:1px solid var(--line); }
+.botanical .technology-lab h2 { max-width:15ch; font-size:clamp(2.6rem,5.5vw,5.2rem); font-weight:450; line-height:1.05; }
+.botanical .lab-grid article:first-child { grid-column:1; }
+.botanical .lab-grid article:nth-child(2) { margin-top:6rem; }
+.field .reader-nav { display:flex; flex-wrap:wrap; gap:1rem 2rem; margin-block:2rem 3rem; }
+.field .reader-nav a { font-size:1rem; font-weight:650; }
+.field .reader-spread article h3 { font-size:clamp(2.1rem,4.2vw,3.9rem); line-height:1.05; }
+.graphite .decision-room { border-block:1px solid var(--line); }
+.graphite .decision-grid { gap:clamp(3rem,10vw,10rem); }
+.graphite .decision-list li { border-top:1px solid var(--line); padding:1.5rem 0 1.5rem 3.5rem; }
+.graphite .decision-list li::before { top:1.75rem; }
+.cobalt .conscious-guide h2 { font-size:clamp(2.7rem,5vw,4.8rem); line-height:1.07; }
+.cobalt .routine-notes { gap:clamp(2rem,5vw,5rem); }
+.cobalt .routine-notes article { background:transparent; border:0; border-top:1px solid var(--line); padding:1.3rem 0 0; }
+@media (max-width:720px) {
+ .vellum .skin-journal { display:block; }
+ .vellum .journal-notes { margin-top:2rem; }
+ .botanical .lab-grid article:nth-child(2) { margin-top:0; }
+ .field .reader-nav { gap:.5rem 1.5rem; margin-block:1.5rem 2rem; }
+ .graphite .decision-grid { gap:2rem; }
+}
+
 /* Ambient light is decorative and never covers text or controls. */
 body:not(.catalog) { position:relative; isolation:isolate; }
 body:not(.catalog)::before { content:""; position:fixed; inset:-15%; z-index:-1; pointer-events:none; opacity:.5; background:radial-gradient(ellipse at 85% 25%, color-mix(in srgb, var(--accent) 14%, transparent), transparent 38%), radial-gradient(ellipse at 12% 72%, color-mix(in srgb, var(--accent) 9%, transparent), transparent 40%); }
