@@ -886,3 +886,80 @@ html[data-appearance="dark"] .technology-lab { color:#f7f3eb; }
  .premium .ai-photo-note {left:1.25rem;}
  .premium-depth {max-width:100vw!important;}
 }
+
+/* SaaS Template fixed navigation + Feature 28 bento, adapted to clinic tokens. */
+html {scroll-padding-top:110px;}
+body:not(.catalog) .skip {z-index:60;}
+.ui21st-navigation.header.frame {position:fixed;inset:0 0 auto;z-index:30;width:100%;max-width:none;min-height:82px;margin:0;padding:1rem max(5vw,calc((100vw - 1360px)/2));display:flex;justify-content:space-between;gap:1rem;border-bottom:1px solid var(--line);background:color-mix(in srgb,var(--paper) 94%,transparent);backdrop-filter:blur(16px);}
+.ui21st-navigation .desktop-nav {display:flex;gap:2rem;}
+.ui21st-navigation nav a {min-height:44px;display:flex;align-items:center;}
+body:not(.catalog) .preview-label {margin-top:82px;}
+.medical-menu-toggle {align-items:center;justify-content:center;width:44px;height:44px;border:1px solid var(--line);border-radius:50%;background:var(--paper);color:var(--ink);cursor:pointer;}
+.medical-menu-toggle[hidden] {display:none;}
+.medical-menu-toggle:focus-visible {outline:2px solid var(--accent);outline-offset:3px;}
+.ui21st-saas .hero-actions .button {background-image:linear-gradient(180deg,var(--action),color-mix(in srgb,var(--action) 92%,var(--ink)));}
+.clinic-backdrop {position:fixed;inset:-64px;z-index:-2;pointer-events:none;background:url('clinic-background.webp') center/cover no-repeat;filter:blur(36px) saturate(.8);opacity:.32;}
+.ui21st-saas .image-stage::after {background:none;}
+.ui21st-saas .image-stage {mask-image:linear-gradient(0deg,transparent,#000 14%),linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-composite:intersect;}
+.premium-vellum.ui21st-saas .image-stage,.premium-field.ui21st-saas .image-stage {mask-image:linear-gradient(0deg,transparent,#000 14%),linear-gradient(90deg,transparent,#000 35%);}
+.premium-botanical.ui21st-saas .image-stage,.premium-cobalt.ui21st-saas .image-stage {mask-image:linear-gradient(0deg,transparent,#000 14%),linear-gradient(270deg,transparent,#000 30%);}
+html[data-appearance="dark"] .clinic-backdrop {opacity:.16;}
+.medical-feature28>.section-heading {max-width:46rem;margin-bottom:3rem;}
+.medical-bento {display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:1rem;}
+.bento-card {min-width:0;min-height:240px;display:flex;flex-direction:column;justify-content:space-between;gap:2.5rem;padding:1.6rem;border-radius:24px;background:color-mix(in srgb,var(--paper) 92%,transparent);border:1px solid color-mix(in srgb,var(--line) 35%,transparent);box-shadow:0 8px 28px color-mix(in srgb,var(--ink) 3%,transparent);}
+.bento-card h3 {font:500 1.15rem/1.3 var(--head);letter-spacing:-.02em;margin:0;}
+.bento-card p {font-size:.9rem;line-height:1.65;color:var(--muted);margin:.6rem 0 0;}
+.bento-card a {font-size:.85rem;font-weight:650;display:inline-flex;align-items:center;gap:.6rem;min-height:44px;margin-top:.7rem;text-underline-offset:.3em;}
+.bento-icon {flex-shrink:0;color:var(--accent);}
+.bento-wide {grid-column:span 2;}
+.bento-step {font-size:.7rem;color:var(--muted);display:block;margin-bottom:.6rem;}
+.bento-waves {position:relative;isolation:isolate;overflow:hidden;background:#15201c;color:#fff;}
+.bento-waves .bento-icon {color:#e2eddf;position:relative;z-index:2;}
+.gradient-waves,.wave-scrim {position:absolute;inset:0;pointer-events:none;z-index:-1;}
+.gradient-waves {background:radial-gradient(ellipse at 25% 20%,#8ea696,transparent 65%),linear-gradient(155deg,#234035,#12241e);}
+.gradient-waves::before {content:"";position:absolute;inset:-30%;border-radius:42%;border:36px solid #aac4b733;transform:rotate(-20deg);}
+.gradient-waves canvas {display:block;width:100%;height:100%;}
+.wave-scrim {z-index:0;background:linear-gradient(0deg,#0d1713f5,#0d171360 65%,transparent);}
+.wave-copy {position:relative;z-index:2;}
+.wave-copy p {color:#e4ede7;}
+.bento-waves a {color:#fff;}
+.bento-booking {background:color-mix(in srgb,var(--soft) 88%,var(--paper));}
+.botanical .bento-waves {background:#29221b;}
+.botanical .gradient-waves {background:radial-gradient(ellipse at 30% 10%,#b5a281,transparent 70%),#2a261d;}
+.field .bento-card {border-radius:30px 22px 30px 22px;}
+.graphite .bento-card {border-radius:18px;}
+.cobalt .bento-card {border-radius:28px;}
+.cobalt .gradient-waves {background:radial-gradient(ellipse at 30% 10%,#ba9280,transparent 70%),#3d2622;}
+.care-story-note {align-self:center;font-size:1.05rem;line-height:1.7;color:var(--muted);}
+.care-story-note h3 {color:var(--ink);font:500 clamp(1.5rem,2.5vw,2.4rem)/1.2 var(--head);margin-bottom:1rem;}
+.care-story-note a {display:inline-flex;align-items:center;min-height:44px;text-underline-offset:.3em;margin-top:1rem;}
+.botanical .care-story-note,.cobalt .care-story-note {grid-column:1/-1;max-width:48rem;}
+.component-credit {font-size:.68rem;color:var(--muted);line-height:1.8;}
+.component-credit a {text-underline-offset:.2em;}
+@media(min-width:961px){.medical-menu-toggle {display:none;}.ui21st-navigation .desktop-nav {position:absolute;left:50%;transform:translateX(-50%);}}
+@media(max-width:1100px){.medical-bento {grid-template-columns:repeat(3,minmax(0,1fr));}.bento-wide {grid-column:span 2;}.bento-card {padding:1.2rem;}}
+@media(max-width:960px){
+ .ui21st-navigation.header.frame {display:grid;grid-template-columns:1fr auto;min-height:82px;}
+ .ui21st-navigation .desktop-nav {grid-column:1/-1;grid-row:2;flex-wrap:wrap;gap:.5rem 2rem;}
+ .ui21st-navigation[data-menu-ready] .desktop-nav {display:none;}
+ .ui21st-navigation[data-menu-open] .desktop-nav {display:flex;flex-direction:column;align-items:stretch;}
+ .ui21st-navigation .header-actions {grid-column:2;grid-row:1;}
+ .medical-menu-toggle {display:inline-flex;}
+ .ui21st-navigation:not([data-menu-ready]) {position:relative;}
+ body:has(.ui21st-navigation:not([data-menu-ready])) .preview-label {margin-top:0;}
+}
+@media(max-width:720px){
+ .ui21st-navigation.header.frame {padding:.8rem 5vw;}
+ .ui21st-navigation .signature strong {font-size:.95rem;}
+ .ui21st-navigation .mark {width:28px;height:28px;}
+ .ui21st-navigation .wordmark {gap:.5rem;}
+ .clinic-backdrop {background-image:url('clinic-background-small.webp');filter:blur(28px) saturate(.8);opacity:.27;}
+ .medical-bento {grid-template-columns:1fr;gap:.8rem;}
+ .bento-card {min-height:0;padding:1.5rem;gap:1.5rem;}
+ .bento-wide {grid-column:auto;}
+ .bento-waves {min-height:260px;}
+ .bento-card[data-kind="phase"] {gap:1.2rem;}
+ .ui21st-saas .image-stage {mask-image:linear-gradient(0deg,transparent,#000 12%,#000 93%,transparent)!important;}
+}
+@media(prefers-reduced-motion:no-preference){[data-wave-mode="css"][data-wave-active="true"]::before {animation:clinical-wave 14s ease-in-out infinite alternate;}@keyframes clinical-wave{to{transform:translateY(15%) rotate(10deg);}}}
+@media(prefers-reduced-motion:reduce){.gradient-waves::before {animation:none!important;}}
